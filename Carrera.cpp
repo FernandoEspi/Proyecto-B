@@ -5,7 +5,7 @@
 
 using namespace std;
 
-// Constructor y destructor de Caballo
+
 Caballo::Caballo(string nombre) : nombre(nombre), recorrido(0), pasos(0) {}
 Caballo::~Caballo() {}
 
@@ -34,7 +34,6 @@ string Caballo::getNombre() const {
     return nombre;
 }
 
-// Constructor y destructor de Carrera
 Carrera::Carrera(const vector<string>& nombres) {
     for (const auto& nombre : nombres) {
         caballos.emplace_back(nombre);
