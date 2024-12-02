@@ -1,7 +1,6 @@
 #include "Carrera.h"
 #include <iostream>
 #include <random>
-#include <algorithm>
 
 using namespace std;
 
@@ -57,10 +56,16 @@ void Carrera::simularCarrera() {
     }
 }
 
-void Carrera::mostrarResultados() {
-    sort(caballos.begin(), caballos.end(), [](const Caballo& a, const Caballo& b) {
-        return a.getPasos() < b.getPasos();
-    });
+for (size_t i = 0; i < caballos.size() - 1; ++i) {
+        for (size_t j = 0; j < caballos.size() - i - 1; ++j) {
+            if (caballos[j].getPasos() > caballos[j + 1].getPasos()) {
+                // Intercambiar manualmente
+                Caballo temp = caballos[j];
+                caballos[j] = caballos[j + 1];
+                caballos[j + 1] = temp;
+            }
+        }
+    }
 
     cout << "Resultados de la carrera:" << endl;
     cout << "Ganador: " << caballos[0].getNombre() << ", cantidad de pasos: " << caballos[0].getPasos() << endl;
