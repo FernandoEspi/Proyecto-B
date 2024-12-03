@@ -32,4 +32,4 @@ public:
     void mostrarResultados();
 };
 
-#endif //CARRERA_H
+#endif
