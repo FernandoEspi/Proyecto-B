@@ -4,7 +4,6 @@
 
 using namespace std;
 
-
 Caballo::Caballo(string nombre) : nombre(nombre), recorrido(0), pasos(0) {}
 Caballo::~Caballo() {}
 
@@ -56,7 +55,8 @@ void Carrera::simularCarrera() {
     }
 }
 
-for (size_t i = 0; i < caballos.size() - 1; ++i) {
+void Carrera::mostrarResultados() {
+    for (size_t i = 0; i < caballos.size() - 1; ++i) {
         for (size_t j = 0; j < caballos.size() - i - 1; ++j) {
             if (caballos[j].getPasos() > caballos[j + 1].getPasos()) {
                 // Intercambiar manualmente
